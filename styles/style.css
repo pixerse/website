@@ -1,0 +1,499 @@
+/*-----------------------------------------------------
+                # Start Global Rules
+-----------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:300');
+
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
+*
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0
+}
+
+body{font-family: 'Encode Sans Expanded', sans-serif; overflow-x: hidden}
+
+ul{list-style-type: none}
+
+.container
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between 
+}
+
+.title
+{
+    font-size: 130%;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 20px 0;
+    position: relative
+}
+
+.under-line::after
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: #E7DFDD;
+    border-radius: 100px / 10px
+}
+
+.wrapper
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 25px
+}
+
+.flex-box
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0
+}
+
+.btn
+{
+    background-color: #4717F6;
+    border-radius: 3px;
+    box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    color: inherit;
+    display: block;
+    font-size: 80%;
+    font-weight: 700;
+    font-family: inherit;
+    margin-bottom: 20px;
+    margin: auto;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: box-shadow .5s;
+    width: 50%
+}
+
+.btn:hover{box-shadow: none}
+
+.close
+{
+    border-radius: 50%;
+    background: 0;
+    color: #E7DFDD;
+    cursor: pointer;
+    position: absolute;
+    font-size: 150%;
+    right: 6px;
+    top: 6px;
+    transform: rotate(45deg);
+    width: 25px;
+    height: 25px
+}
+
+.close:hover
+{
+    box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.4);
+    transition: box-shadow .5s
+}
+
+.pos-relative{position: relative}
+
+.tooltip
+{
+    color: #f00;
+    height: 40px;
+    width: 100px;
+    padding: 5px 6px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    position: absolute;
+    right: -53%;
+    top: -5px;;
+    display: none;
+    font-size: 75%;
+    font-weight: 700
+}
+.tooltip::before
+{
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    border: inherit;
+    border-right: 0;
+    border-top: 0;
+    background-color: #0B1126
+}
+/*-----------------------------------------------------
+                # End Global Rules
+-----------------------------------------------------*/
+
+/*-----------------------------------------------------
+                # Start Stting Rules
+-----------------------------------------------------*/
+.setting
+{
+    background-color: #0B1126;
+    color: #E7DFDD;
+    min-width: 25%;
+    flex-basis: 25%;
+    min-height: 100vh;
+    padding: 0 20px 20px
+}
+
+.setting::before, .setting::after
+{
+    box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+    border-radius: 100px / 10px;
+    content: "";
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    right: 0;
+    left: 0;
+    z-index: -1
+}
+
+.setting::after
+{
+    left:auto; 
+    right:10px;
+    transform:skew(8deg) rotate(3deg)
+}
+
+.gr-dimension
+{
+    display : flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding-bottom: 20px
+}
+
+.setting > .under-line::after{width: 95%; height: 1px}
+
+.gr-dimension > h2{margin-bottom: 30px}
+
+.wrapper > label{flex-basis: calc(100% - 100px)}
+
+.wrapper > input
+{
+    border-radius: 3px;
+    height: 30px;
+    width: 70px;
+    line-height: 30px;
+    padding-left: 10px
+}
+
+.color-picker .wrapper{margin-bottom: 0; padding: 20px 0}
+
+.color-picker .wrapper > input{cursor: pointer; padding: 0 10px}
+
+.main-color{flex-direction: column; padding-top: 0}
+
+.main-color > .flex-box
+{
+    flex-basis: 50%;
+    flex-direction: row;
+    padding: 0
+}
+
+.main-color > ul:first-child{margin-bottom: 20px}
+
+.main-color > ul .color
+{
+    cursor: pointer;
+    box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.7);
+    height: 30px;
+    width: 30px;
+    transition: box-shadow .5s
+}
+
+.main-color > ul .color:hover{box-shadow: none}
+
+.main-color .col1 .color:first-child{background-color: #000000}
+
+.main-color .col1 .color:nth-child(2){background-color: #ffffff}
+
+.main-color .col1 .color:nth-child(3){background-color: #E6194B}
+
+.main-color .col1 .color:last-child{background-color: #3CB44B}
+
+.main-color .col2 .color:first-child{background-color: #FFE119}
+
+.main-color .col2 .color:nth-child(2){background-color: #D2F53C}
+
+.main-color .col2 .color:nth-child(3){background-color: #46F0F0}
+
+.main-color .col2 .color:last-child{background-color: #0082C8}
+
+.custom{min-height: 275px}
+
+.custom .flex-box .btn
+{
+    flex-basis: 100px;
+    font-size: 70%;
+    margin: 0 0 20px;
+    padding: 10px 0
+}
+
+.custom #customGrid
+{
+    background-color: #E6194B;
+    position: absolute;
+    left: -10%;
+    top: 0;
+    height: 105%;
+    width: 120%;
+    display: none
+}
+
+.custom #customGrid .outer-wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 5px
+}
+
+.custom #customGrid .outer-wrapper .center-wrapper{flex-basis: 100%; padding: 10px}
+
+.custom #customGrid .wrapper{margin-bottom: 15px}
+
+.custom #customGrid .wrapper > label{flex-basis: calc(100% - 50px); font-size: 90%}
+
+.custom #customGrid .wrapper > input{flex-basis: 50px; padding: 0 5px }
+
+.custom #customGrid .wrapper > input[type="number"]{width: 50px; padding-right: 0}
+
+.custom #customGrid .submit-favorites
+{
+    background-color: #0b1126;
+    font-weight: 500;
+    width: auto;
+    display: none
+}
+
+.custom #customGrid .choose-custom-way
+{
+    background-color: rgba(11,17,38, .9);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%
+}
+
+.custom #customGrid .choose-custom-way > h3{font-weight: 400; text-align: center}
+
+.custom #customGrid .choose-custom-way .btn
+{
+    background-color: #E6194B;
+    margin: 0 auto 20px;
+    height: 40px;
+    width: 150px
+}
+/*-----------------------------------------------------
+                # End Stting Rules
+-----------------------------------------------------*/
+
+/*-----------------------------------------------------
+                # Start Grid Rules
+-----------------------------------------------------*/
+.make-grid
+{
+    flex-basis: 75%;
+    min-height: 100vh;
+    text-align: center
+}
+
+.make-grid > h1
+{
+    color: #4717F6;
+    font-family: 'Monoton', cursive;
+    font-size: 5vw;
+    padding: 10px 0;
+    position: relative
+}
+
+.make-grid > h1.under-line::after
+{
+    background-color: #4717F6;
+    height: 4px;
+    width: 150px
+}
+
+.make-grid > h2{color: #0B1126; padding-bottom: 0}
+
+.make-grid > h2::after
+{
+    content: "\00BB";
+    display: block;
+    font-size: 300%;
+    margin:auto;
+    transform: translate(25px) rotate(90deg);
+    height: 50px;
+    width: 50px
+}
+
+.make-grid .gr-features
+{
+    color: #E7DFDD;
+    background-color: #0B1126;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, .4);
+    border-radius: 3px;
+    height: 60px;
+    width : 70%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    display: none
+}
+
+.make-grid .gr-features .feature
+{
+    cursor: pointer;
+    background-color: #4717F6;
+    box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.7);
+    flex-basis: 35px;
+    height: 35px;
+    font-size: 120%;
+    text-align: center;
+    transition: box-shadow .5s
+}
+
+.make-grid .gr-features .feature:hover{box-shadow: none}
+
+.material-icons{line-height: 35px}
+
+.make-grid .gr-features .feature:nth-child(2) > i::before
+{
+    content: "";
+    background-color: #E7DFDD;
+    box-shadow: 0 -2px 0 #4717F6;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    height: 2px;
+    width: 100%
+}
+
+.grid
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px
+}
+
+table
+{
+    border-collapse: collapse;
+    border: 2px solid #0B1126;
+    box-shadow: 5px 10px 20px rgba(0,0,0,.1)
+}
+
+tr, td{border: 1px solid #0B1126}
+
+/* table > tr{height: 15px}
+
+table > tr > td{width: 15px} */
+/*-----------------------------------------------------
+                # End Grid Rules
+-----------------------------------------------------*/
+
+/*-----------------------------------------------------
+                # Start Mobile version
+-----------------------------------------------------*/
+@media screen and (max-width: 900px)
+{
+    .container
+    {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .setting
+    {
+        flex-basis: 100%;
+        min-height: 310px;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0
+    }
+
+    .gr-dimension, .color-picker, .custom
+    {
+        flex-basis: calc(100% / 3);
+        height: inherit;
+        padding: 0 20px
+    }
+
+    .setting > .under-line::after
+    {
+        left: auto;
+        bottom: auto;
+        right: 0;
+        top: 50%;
+        height: 90%;
+        width: 1px;
+        transform: translateX(0) translateY(-50%);
+    }
+
+    .custom #customGrid
+    {
+        width: 100%;
+        height: 100%;
+        left: auto;
+        right: 0;
+    }
+
+    .make-grid{flex-basis: 100%}
+
+}
+
+@media screen and (max-width: 768px)
+{
+    .setting{justify-content: center}
+
+    .setting > .under-line::after
+    {
+        left: 50%;
+        bottom: 0;
+        right: auto;
+        top: auto;
+        height: 1px;
+        width: 95%;
+        transform: translateX(-50%) translateY(0)
+    }
+
+    .gr-dimension, .color-picker, .custom{min-width: 245px}
+
+    .wrapper{margin-bottom: 0}
+}
+/*-----------------------------------------------------
+                # End Mobile version
+-----------------------------------------------------*/
+

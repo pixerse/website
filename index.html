@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Pixels Of MetaVerse</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- Start Setting Section -->
+            <aside class="setting pos-relative">
+                <!-- Start Grid Dimension -->
+                <form class="gr-dimension under-line pos-relative" id="gridSize">
+                    <h2 class="title under-line">choose grid size</h2>
+                    <div class="wrapper pos-relative">
+                        <label>Grid width </label>
+                        <input type="number" name="gr-width" min="1" id="get-width" autofocus>
+                        <!-- Tooltip appear when user enter wrong value -->
+                        <div class="tooltip width-tooltip"></div>
+                    </div>
+                    <div class="wrapper pos-relative">
+                        <label>Grid height </label>
+                        <input type="number" name="gr-height" min="1" id="get-height">
+                        <!-- Tooltip appears when user enter wrong value -->
+                        <div class="tooltip height-tooltip"></div>
+                    </div>
+                    <input type="submit" value="creat Grid" id="creat-gr" class="btn">
+                </form>
+                <!-- End Grid Dimension -->
+
+                <!-- Start Color Picker -->
+                <section class="color-picker under-line pos-relative">
+                    <h2 class="title under-line">color</h2>
+                    <div class="wrapper">
+                        <label>Pick a color </label>
+                        <input type="color" name="gr-color" id="grColor" form="gridSize">
+                    </div>
+                    <div class="main-color flex-box">
+                        <ul class="col1 flex-box">
+                            <li class="color"></li>
+                            <li class="color"></li>
+                            <li class="color"></li>
+                            <li class="color"></li>
+                        </ul>
+                        <ul class="col2 flex-box">
+                            <li class="color"></li>
+                            <li class="color"></li>
+                            <li class="color"></li>
+                            <li class="color"></li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- End Color Picker -->
+
+                <!-- Start Custom -->
+                <section class="custom pos-relative">
+                    <h2 class="title under-line">custom</h2>
+                    <!-- Start Custom Buttons -->
+                    <div class="flex-box">
+                        <button type="reset" class="btn reset-app" form="gridSize">reset app</button>
+                        <button class="btn open-custom-gr">custom grid</button>
+                    </div>
+                    <!-- End Custom Buttons -->
+
+                    <!-- Start Custom Grid -->
+                    <div id="customGrid">
+                        <!-- This button close custom grid panel -->
+                        <button class="close">+</button>
+                        <div class="outer-wrapper">
+                            <div class="center-wrapper">
+                                <!-- This input set a grid background -->
+                                <div class="wrapper">
+                                    <label>Grid background</label>
+                                    <input type="color" name="gr-bg" id="grBackground" form="gridSize" value="#ffffff">
+                                </div>
+                                <!-- This input set a grid outer border color -->
+                                <div class="wrapper">
+                                    <label>Outer border color</label>
+                                    <input type="color" name="outer-border" id="outerBorder" form="gridSize" value="#0B1126">
+                                </div>
+                                <!-- This input set a grid outer border weight -->
+                                <div class="wrapper">
+                                    <label>Outer border weight</label>
+                                    <input type="number" name="border-weight" id="borderWeight" form="gridSize" min="1" max="10">
+                                </div>
+                                <!-- This input set inner grid color -->
+                                <div class="wrapper">
+                                    <label>Inner grid color</label>
+                                    <input type="color" name="inner-gr" id="innerGrid" form="gridSize" value="#0B1126">
+                                </div>
+                                <button class="btn submit-favorites">submit favorites</button>
+                            </div>
+                        </div>
+                        <!-- Overlay make user choose between submit changes or live changes -->
+                        <div class="choose-custom-way">
+                            <h3>Please choose the change way.</h3>
+                            <div class="center-wrapper">
+                                <button class="btn submit-changes">submit changes</button>
+                                <button class="btn live-changes">live changes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Custom Grid -->
+                </section>
+                <!-- End Custom -->
+
+            </aside>
+            <!-- End Settings Section -->
+
+            <!-- Start Grid -->
+            <section class="make-grid">
+                <h1 font-size 20 class="under-line">Pixerse: Pixels of MetaVerse</h1>
+                <h2 class="title">Pixer Your Land</h2>
+                <!-- This section appears when submit grid dimension and give user some additional features --> 
+                <ul class="gr-features">
+                    <li class="feature" id="clearGrid" title="Hide Inside Grid">
+                        <i class="material-icons">&#xE3EB;</i>
+                    </li>
+                    <li class="feature pos-relative" id="clearCanvas" title="Clear Canvas">
+                        <i class="material-icons">&#xE243;</i>
+                    </li>
+                    <li class="feature" id="clearCell" title="Active Eraser">
+                        <i class="material-icons">&#xE53C;</i>
+                    </li>
+                </ul>
+                <div class="grid">
+                    <table></table>
+                </div>
+            </section>
+            <!-- End Grid -->
+        </div>
+
+        <!-- Javascript Files -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="scripts/design.js"></script>
+    </body>
+</html>
